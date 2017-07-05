@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import AllAlbums from './AllAlbums';
 import SingleAlbum from './SingleAlbum';
 import Sidebar from './Sidebar';
@@ -10,33 +9,21 @@ export default class Main extends Component {
 
   constructor (props) {
     super(props);
-    this.state = {
-      albums: [],
-      selectedAlbum: {}
-    };
     this.selectAlbum = this.selectAlbum.bind(this);
     this.deselectAlbum = this.deselectAlbum.bind(this);
   }
 
-  componentDidMount () {
-    axios.get('/api/albums/')
-      .then(res => res.data)
-      .then(albums => {
-        this.setState({ albums })
-      });
-  }
+  // selectAlbum (albumId) {
+  //   axios.get(`/api/albums/${albumId}`)
+  //     .then(res => res.data)
+  //     .then(album => this.setState({
+  //       selectedAlbum: album
+  //     }));
+  // }
 
-  selectAlbum (albumId) {
-    axios.get(`/api/albums/${albumId}`)
-      .then(res => res.data)
-      .then(album => this.setState({
-        selectedAlbum: album
-      }));
-  }
-
-  deselectAlbum () {
-    this.setState({ selectedAlbum: {}});
-  }
+  // deselectAlbum () {
+  //   this.setState({ selectedAlbum: {}});
+  // }
 
   render () {
     return (
@@ -46,8 +33,9 @@ export default class Main extends Component {
         </div>
         <HashRouter>
           <div className="col-xs-10">
-            <Route path="/albums" component={AllAlbums} />
+            <Route exact path="/albums" component={AllAlbums} />
             <Route exact path="/" component={AllAlbums} />
+            <Route path="/albums/:albumId" component={SingleAlbum} />
           </div>
         </HashRouter>
         <Player />
