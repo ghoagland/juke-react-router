@@ -9,8 +9,8 @@ export default class Main extends Component {
 
   constructor (props) {
     super(props);
-    this.selectAlbum = this.selectAlbum.bind(this);
-    this.deselectAlbum = this.deselectAlbum.bind(this);
+    // this.selectAlbum = this.selectAlbum.bind(this);
+    // this.deselectAlbum = this.deselectAlbum.bind(this);
   }
 
   // selectAlbum (albumId) {
@@ -27,19 +27,19 @@ export default class Main extends Component {
 
   render () {
     return (
-      <div id="main" className="container-fluid">
-        <div className="col-xs-2">
-          <Sidebar deselectAlbum={this.deselectAlbum} />
-        </div>
-        <HashRouter>
+      <HashRouter>
+        <div id="main" className="container-fluid">
+          <div className="col-xs-2">
+            <Sidebar deselectAlbum={this.deselectAlbum} />
+          </div>
           <div className="col-xs-10">
             <Route exact path="/albums" component={AllAlbums} />
             <Route exact path="/" component={AllAlbums} />
             <Route path="/albums/:albumId" component={SingleAlbum} />
           </div>
-        </HashRouter>
-        <Player />
-      </div>
+          <Player />
+        </div>
+      </HashRouter>
     );
   }
 }
