@@ -22,7 +22,7 @@ export default class Main extends Component {
             <Route exact path="/" component={StatefulAlbums} />
             <Route path="/albums/:albumId" component={SingleAlbum} />
             <Route exact path="/artists" component={AllArtists} />
-            <Route exact path="/artists/:artistId" component={SingleArtist} />
+            <Route path="/artists/:artistId" component={SingleArtist} />
           </div>
           <Player />
         </div>
