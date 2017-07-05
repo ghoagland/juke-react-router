@@ -1,5 +1,7 @@
+//Imported NavLink and just changed links in this file to navlinks
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = (props) => {
   return (
@@ -7,12 +9,12 @@ const Sidebar = (props) => {
       <img src="juke.svg" className="logo" />
       <section>
         <h4 className="menu-item active">
-          <Link to="/albums">Albums</Link>
+          <NavLink to="/albums">Albums</NavLink>
         </h4>
       </section>
       <section>
         <h4 className="menu-item active">
-          <Link to="/artists">Artists</Link>
+          <NavLink to="/artists">Artists</NavLink>
         </h4>
       </section>
     </sidebar>
