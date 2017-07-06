@@ -5,14 +5,21 @@ import Sidebar from './Sidebar';
 import Player from './Player';
 import AllArtists from './AllArtists';
 import SingleArtist from './SingleArtist';
-import {HashRouter, Switch, Route} from 'react-router-dom';
+import {Switch, Route, BrowserRouter} from 'react-router-dom';
 
+//Switched HashRouter to BrowserRouter to get NoMatch page to work
+
+const NoMatch = ({ location }) => (
+  <div>
+    <h3>No match for <code>{location.pathname}</code></h3>
+  </div>
+);
 
 export default class Main extends Component {
 
   render () {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <div id="main" className="container-fluid">
           <div className="col-xs-2">
             <Sidebar />
@@ -24,12 +31,12 @@ export default class Main extends Component {
               <Route path="/albums/:albumId" component={SingleAlbum} />
               <Route exact path="/artists" component={AllArtists} />
               <Route path="/artists/:artistId" component={SingleArtist} />
-              <Route path="*" component={({location}) => {return (<h2>{location.pathname} does not exist. </h2>)}} />
+              <Route component={NoMatch} />
             </Switch>
           </div>
           <Player />
         </div>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }
