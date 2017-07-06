@@ -32,7 +32,7 @@ export default class SingleAlbum extends Component {
           <h3>{ album.name }</h3>
           <img src={ album.imageUrl } className="img-thumbnail" />
         </div>
-        <Songs songs={album.songs} play={this.props} />
+        <Songs songs={album.songs} {...this.props} />
       </div>
     );
   }

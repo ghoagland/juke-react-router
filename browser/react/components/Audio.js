@@ -86,6 +86,7 @@ export default class Audio extends Component {
   }
 
   toggleOne (selectedSong, selectedSongList) {
+    console.log('toggleOne', selectedSong, selectedSongList);
     if (selectedSong.id !== this.state.currentSong.id)
       this.startSong(selectedSong, selectedSongList);
     else this.toggle();

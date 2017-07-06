@@ -3,7 +3,7 @@ import React from 'react';
 const Songs = (props) => {
 
   const songs = props.songs;
-  //console.log('song!!', props);
+  console.log('song!!', props);
   return (
     <table className='table'>
       <thead>
@@ -19,7 +19,7 @@ const Songs = (props) => {
           songs && songs.map(song => (
             <tr key={song.id}>
               <td>
-                <button className="btn btn-default btn-xs">
+                <button className="btn btn-default btn-xs"  onClick={()=>{props.toggleOne(song, props.currentSongList)}}>
                   <span className="glyphicon glyphicon-play"></span>
                 </button>
               </td>
@@ -37,3 +37,5 @@ const Songs = (props) => {
 }
 
 export default Songs;
+
+
