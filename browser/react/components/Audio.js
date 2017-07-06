@@ -94,14 +94,18 @@ export default class Audio extends Component {
   toggle () {
     if (this.state.isPlaying) this.pause();
     else this.play();
+    console.log("toggle");
+
   }
 
   next () {
     this.startSong(...skip(1, this.state));
+    console.log("play next");
   }
 
   prev () {
     this.startSong(...skip(-1, this.state));
+    console.log("play prev");
   }
 
   setProgress (progress) {

@@ -3,7 +3,7 @@ import React from 'react';
 const Songs = (props) => {
 
   const songs = props.songs;
-  console.log('song!!', props);
+  //console.log('song!!', props);
   return (
     <table className='table'>
       <thead>

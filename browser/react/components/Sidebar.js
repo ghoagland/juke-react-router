@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Sidebar = (props) => {
   return (
     <sidebar>
-      <img src="juke.svg" className="logo" />
+      <img src="/juke.svg" className="logo" />
       <section>
         <h4 className="menu-item active">
           <NavLink to="/albums" activeClassName='active'>Albums</NavLink>

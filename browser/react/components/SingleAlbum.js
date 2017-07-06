@@ -4,10 +4,12 @@ import axios from 'axios';
 
 
 export default class SingleAlbum extends Component {
-  constructor(){
+  constructor(props){
     super();
+    console.log(props)
     this.state = {
-      selectedAlbum: {}
+      selectedAlbum: {},
+      // audio: props.audio
     };
   }
 
@@ -21,7 +23,7 @@ export default class SingleAlbum extends Component {
   }
 
   render () {
-    //console.log(this.props);
+    //console.log(this.state);
     const album = this.state.selectedAlbum;
 
     return (
