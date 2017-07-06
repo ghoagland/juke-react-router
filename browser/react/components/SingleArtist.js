@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Songs from '../components/Songs';
 import AllAlbums from './AllAlbums';
-import { Link, Route } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 
 export default class SingleArtist extends Component {
 
@@ -42,8 +42,8 @@ export default class SingleArtist extends Component {
         <div>
           <h3>{ artist.name }</h3>
           <ul className="nav nav-tabs">
-            <li><Link to={`/artists/${artist.id}/albums`}>ALBUMS</Link></li>
-            <li><Link to={`/artists/${artist.id}/songs`}>SONGS</Link></li>
+            <li><NavLink to={`/artists/${artist.id}/albums`} activeClassName='active'>ALBUMS</NavLink></li>
+            <li><NavLink to={`/artists/${artist.id}/songs`} activeClassName='active'>SONGS</NavLink></li>
           </ul>
 
           <Route path={`/artists/${artist.id}/albums`} render={() => <AllAlbums albums={this.state.selectedArtistAlbums} />} />

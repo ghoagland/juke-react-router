@@ -59,4 +59,15 @@ footer {
     transition: none !important; }
 
 .album img {
-  height: 300px; }
+  height: 300px;
+}
+
+a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+a:not(.active) {
+  font-weight: normal;
+  text-decoration: none;
+}
